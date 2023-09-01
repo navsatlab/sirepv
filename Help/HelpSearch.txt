@@ -1,0 +1,23 @@
+Sistema de ayuda con el comando «BUSCAR»
+
+DESCRIPCIÓN:
+Este comando te ayudará en la búsqueda de libros o títulos que tu le especifiques.
+Si no le especificas qué buscar, se abrirá una ventana donde podrás seleccionar qué tipo de búsqueda deseas hacer.
+Si deseas no pasar por esa ventana, aquí hay una serie de palabras clave que puedes usar para realizar una búsqueda más específica:
+
+PALABRAS CLAVE:
+TITULO		Realiza la búsqueda dentro de títulos únicamente
+AUTOR		Busca por nombre de autor
+EDITORIAL	Busca por editoriales
+COLECCION	Busca dentro de las colecciones existentes
+DONANTE		Busca los títulos por el donante
+ISBN		Busca por el ISBN del libro
+TEMAS		Busca por temas disponibles
+
+EJEMPLOS DE USO:
+BUSCAR la perla
+	Te arrojará una búsqueda general de todo lo que contenga ese texto
+BUSCAR TITULO Cuentos indios AUTOR Angulo DONANTE Francisco Toledo
+	Realizará una búsqueda más específica con los datos proporcionados
+BUSCAR FOLIO 2394-10 | BUSCAR FICHA 55523
+	Es una búsqueda más específica, donde irá directamente al folio del libro

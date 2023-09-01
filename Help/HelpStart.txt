@@ -1,0 +1,7 @@
+Sistema de ayuda con el comando «INICIAR»
+
+DESCRIPCIÓN:
+Comienza o reanuda el cotejo de las fichas catalográficas. Esto quiere decir que se hará el cotejo entre los datos de Prometeo V y la base de Excel donde se almacena el inventario; sin tener que tener abierto los programas y te tardes más en hacer la actividad. 
+Además de que durante el cotejo, el programa te resaltará los errores ortográficos, de abreviación y algunas otras más que pudiese encontrar. Todas estas revisiones serán enviadas a Drive a la área de catalogación quien será responsable de hacer las modificaciones necesarias.
+
+Ya no tendrás que hacer tres veces el trabajo teniendo el Prometeo, el Excel y el formulario de Drive abiertos al mismo tiempo.

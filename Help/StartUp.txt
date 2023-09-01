@@ -1,0 +1,25 @@
+Bienvenido al módulo de corrección de datos de Prometeo
+
+Esta aplicación permite el cotejo, búsqueda y corrección de fichas catalográficas de la base de Prometeo.
+¡Toma nota que todos los comandos que ingreses deberás escribirlos en mayúsculas!
+
+Comandos de búsqueda de información
+BUSCAR			Busca dentro de las fichas disponibles por título, autor, clasificación, etc.
+
+Comandos de cotejo, modificación y revisión de fichas
+INICIAR			Comienza o reanuda la tarea de verificación de fichas catalográficas
+EXPORTAR		Genera un reporte en Excel de los avances de las correcciones enviadas
+VER			Muestra los cambios más recientes en la base de Prometeo
+
+Comandos de actualización, reconfiguración de la base de datos
+RECONFIG		Borra todos los datos, y reconfigura desde el inicio el programa
+RECARGAR		Actualiza toda la base de datos y comprueba cambios recientes
+
+Otros comandos del programa disponibles
+CREDENCIAL		Realiza credenciales de usuario para la biblioteca
+ADVANCED		Montre plus de commandes avancées de développement pour ce programme
+ABOUT			Muestra información sobre la versión de este programa
+SALIR			Sale de la aplicación
+
+Si tienes alguna duda sobre cada comando, puedes escribir «AYUDA» seguido del comando que quieres.
+Ejemplo: «AYUDA BUSCAR»

@@ -1,0 +1,1510 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Forms.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Forms.v1.FormsService">
+            <summary>The Forms Service.</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.Version">
+            <summary>The API version.</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.DiscoveryVersionUsed">
+            <summary>The discovery version used to generate this service.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsService.#ctor">
+            <summary>Constructs a new service.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
+            <summary>Constructs a new service.</summary>
+            <param name="initializer">The service initializer.</param>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsService.Features">
+            <summary>Gets the service supported features.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsService.Name">
+            <summary>Gets the service name.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsService.BaseUri">
+            <summary>Gets the service base URI.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsService.BasePath">
+            <summary>Gets the service base path.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsService.BatchUri">
+            <summary>Gets the batch base URI; <c>null</c> if unspecified.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsService.BatchPath">
+            <summary>Gets the batch base path; <c>null</c> if unspecified.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsService.Scope">
+            <summary>Available OAuth 2.0 scopes for use with the Google Forms API.</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.Scope.Drive">
+            <summary>See, edit, create, and delete all of your Google Drive files</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.Scope.DriveFile">
+            <summary>
+            See, edit, create, and delete only the specific Google Drive files you use with this app
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.Scope.DriveReadonly">
+            <summary>See and download all your Google Drive files</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.Scope.FormsBody">
+            <summary>See, edit, create, and delete all your Google Forms forms</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.Scope.FormsBodyReadonly">
+            <summary>See all your Google Forms forms</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.Scope.FormsResponsesReadonly">
+            <summary>See all responses to your Google Forms forms</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsService.ScopeConstants">
+            <summary>Available OAuth 2.0 scope constants for use with the Google Forms API.</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.ScopeConstants.Drive">
+            <summary>See, edit, create, and delete all of your Google Drive files</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.ScopeConstants.DriveFile">
+            <summary>
+            See, edit, create, and delete only the specific Google Drive files you use with this app
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.ScopeConstants.DriveReadonly">
+            <summary>See and download all your Google Drive files</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.ScopeConstants.FormsBody">
+            <summary>See, edit, create, and delete all your Google Forms forms</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.ScopeConstants.FormsBodyReadonly">
+            <summary>See all your Google Forms forms</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsService.ScopeConstants.FormsResponsesReadonly">
+            <summary>See all responses to your Google Forms forms</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsService.Forms">
+            <summary>Gets the Forms resource.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsBaseServiceRequest`1">
+            <summary>A base abstract class for Forms requests.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new FormsBaseServiceRequest instance.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.Xgafv">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.XgafvEnum">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.XgafvEnum.Value1">
+            <summary>v1 error format</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.XgafvEnum.Value2">
+            <summary>v2 error format</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.AccessToken">
+            <summary>OAuth access token.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.Alt">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.AltEnum">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.AltEnum.Media">
+            <summary>Media download with context-dependent Content-Type</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.AltEnum.Proto">
+            <summary>Responses with Content-Type of application/x-protobuf</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.Callback">
+            <summary>JSONP</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.Key">
+            <summary>
+            API key. Your API key identifies your project and provides you with API access, quota, and reports. Required
+            unless you provide an OAuth 2.0 token.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.QuotaUser">
+            <summary>
+            Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a
+            user, but should not exceed 40 characters.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.UploadType">
+            <summary>Legacy upload protocol for media (e.g. "media", "multipart").</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.UploadProtocol">
+            <summary>Upload protocol for media (e.g. "raw", "multipart").</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsBaseServiceRequest`1.InitParameters">
+            <summary>Initializes Forms parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource">
+            <summary>The "forms" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.Responses">
+            <summary>Gets the Responses resource.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.ResponsesResource">
+            <summary>The "responses" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsResource.ResponsesResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.ResponsesResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.ResponsesResource.Get(System.String,System.String)">
+            <summary>Get one response from the form.</summary>
+            <param name="formId">Required. The form ID.</param>
+            <param name="responseId">Required. The response ID within the form.</param>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.ResponsesResource.GetRequest">
+            <summary>Get one response from the form.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.ResponsesResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.GetRequest.FormId">
+            <summary>Required. The form ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.GetRequest.ResponseId">
+            <summary>Required. The response ID within the form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.ResponsesResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.ResponsesResource.List(System.String)">
+            <summary>List a form's responses.</summary>
+            <param name="formId">Required. ID of the Form whose responses to list.</param>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.ResponsesResource.ListRequest">
+            <summary>List a form's responses.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.ResponsesResource.ListRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.ListRequest.FormId">
+            <summary>Required. ID of the Form whose responses to list.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.ListRequest.Filter">
+            <summary>
+            Which form responses to return. Currently, the only supported filters are: * timestamp &amp;gt; *N*
+            which means to get all form responses submitted after (but not at) timestamp *N*. * timestamp
+            &amp;gt;= *N* which means to get all form responses submitted at and after timestamp *N*. For both
+            supported filters, timestamp must be formatted in RFC3339 UTC "Zulu" format. Examples:
+            "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.ListRequest.PageSize">
+            <summary>
+            The maximum number of responses to return. The service may return fewer than this value. If
+            unspecified or zero, at most 5000 responses are returned.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.ListRequest.PageToken">
+            <summary>
+            A page token returned by a previous list response. If this field is set, the form and the values of
+            the filter must be the same as for the original request.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.ResponsesResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.ResponsesResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.Watches">
+            <summary>Gets the Watches resource.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.WatchesResource">
+            <summary>The "watches" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Forms.v1.FormsResource.WatchesResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.Create(Google.Apis.Forms.v1.Data.CreateWatchRequest,System.String)">
+            <summary>
+            Create a new watch. If a watch ID is provided, it must be unused. For each invoking project, the per
+            form limit is one watch per Watch.EventType. A watch expires seven days after it is created (see
+            Watch.expire_time).
+            </summary>
+            <param name="body">The body of the request.</param>
+            <param name="formId">Required. ID of the Form to watch.</param>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.WatchesResource.CreateRequest">
+            <summary>
+            Create a new watch. If a watch ID is provided, it must be unused. For each invoking project, the per
+            form limit is one watch per Watch.EventType. A watch expires seven days after it is created (see
+            Watch.expire_time).
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Forms.v1.Data.CreateWatchRequest,System.String)">
+            <summary>Constructs a new Create request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.CreateRequest.FormId">
+            <summary>Required. ID of the Form to watch.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.CreateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.CreateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.CreateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.CreateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.CreateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.CreateRequest.InitParameters">
+            <summary>Initializes Create parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.Delete(System.String,System.String)">
+            <summary>Delete a watch.</summary>
+            <param name="formId">Required. The ID of the Form.</param>
+            <param name="watchId">Required. The ID of the Watch to delete.</param>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.WatchesResource.DeleteRequest">
+            <summary>Delete a watch.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String,System.String)">
+            <summary>Constructs a new Delete request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.DeleteRequest.FormId">
+            <summary>Required. The ID of the Form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.DeleteRequest.WatchId">
+            <summary>Required. The ID of the Watch to delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.DeleteRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.DeleteRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.DeleteRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.DeleteRequest.InitParameters">
+            <summary>Initializes Delete parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.List(System.String)">
+            <summary>
+            Return a list of the watches owned by the invoking project. The maximum number of watches is two: For
+            each invoker, the limit is one for each event type per form.
+            </summary>
+            <param name="formId">Required. ID of the Form whose watches to list.</param>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.WatchesResource.ListRequest">
+            <summary>
+            Return a list of the watches owned by the invoking project. The maximum number of watches is two: For
+            each invoker, the limit is one for each event type per form.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.ListRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.ListRequest.FormId">
+            <summary>Required. ID of the Form whose watches to list.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.Renew(Google.Apis.Forms.v1.Data.RenewWatchRequest,System.String,System.String)">
+            <summary>
+            Renew an existing watch for seven days. The state of the watch after renewal is `ACTIVE`, and the
+            `expire_time` is seven days from the renewal. Renewing a watch in an error state (e.g. `SUSPENDED`)
+            succeeds if the error is no longer present, but fail otherwise. After a watch has expired, RenewWatch
+            returns `NOT_FOUND`.
+            </summary>
+            <param name="body">The body of the request.</param>
+            <param name="formId">Required. The ID of the Form.</param>
+            <param name="watchId">Required. The ID of the Watch to renew.</param>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.WatchesResource.RenewRequest">
+            <summary>
+            Renew an existing watch for seven days. The state of the watch after renewal is `ACTIVE`, and the
+            `expire_time` is seven days from the renewal. Renewing a watch in an error state (e.g. `SUSPENDED`)
+            succeeds if the error is no longer present, but fail otherwise. After a watch has expired, RenewWatch
+            returns `NOT_FOUND`.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.RenewRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Forms.v1.Data.RenewWatchRequest,System.String,System.String)">
+            <summary>Constructs a new Renew request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.RenewRequest.FormId">
+            <summary>Required. The ID of the Form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.RenewRequest.WatchId">
+            <summary>Required. The ID of the Watch to renew.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.RenewRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.RenewRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.RenewRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.RenewRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.WatchesResource.RenewRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.WatchesResource.RenewRequest.InitParameters">
+            <summary>Initializes Renew parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.BatchUpdate(Google.Apis.Forms.v1.Data.BatchUpdateFormRequest,System.String)">
+            <summary>Change the form with a batch of updates.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="formId">Required. The form ID.</param>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.BatchUpdateRequest">
+            <summary>Change the form with a batch of updates.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.BatchUpdateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Forms.v1.Data.BatchUpdateFormRequest,System.String)">
+            <summary>Constructs a new BatchUpdate request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.BatchUpdateRequest.FormId">
+            <summary>Required. The form ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.BatchUpdateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.BatchUpdateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.BatchUpdateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.BatchUpdateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.BatchUpdateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.BatchUpdateRequest.InitParameters">
+            <summary>Initializes BatchUpdate parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.Create(Google.Apis.Forms.v1.Data.Form)">
+            <summary>
+            Create a new form using the title given in the provided form message in the request. *Important:* Only the
+            form.info.title and form.info.document_title fields are copied to the new form. All other fields including
+            the form description, items and settings are disallowed. To create a new form and add items, you must first
+            call forms.create to create an empty form with a title and (optional) document title, and then call
+            forms.update to add the items.
+            </summary>
+            <param name="body">The body of the request.</param>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.CreateRequest">
+            <summary>
+            Create a new form using the title given in the provided form message in the request. *Important:* Only the
+            form.info.title and form.info.document_title fields are copied to the new form. All other fields including
+            the form description, items and settings are disallowed. To create a new form and add items, you must first
+            call forms.create to create an empty form with a title and (optional) document title, and then call
+            forms.update to add the items.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Forms.v1.Data.Form)">
+            <summary>Constructs a new Create request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.CreateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.CreateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.CreateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.CreateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.CreateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.CreateRequest.InitParameters">
+            <summary>Initializes Create parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.Get(System.String)">
+            <summary>Get a form.</summary>
+            <param name="formId">Required. The form ID.</param>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.FormsResource.GetRequest">
+            <summary>Get a form.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.GetRequest.FormId">
+            <summary>Required. The form ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.FormsResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Forms.v1.FormsResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Answer">
+            <summary>The submitted answer for a question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Answer.FileUploadAnswers">
+            <summary>Output only. The answers to a file upload question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Answer.Grade">
+            <summary>Output only. The grade for the answer if the form was a quiz.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Answer.QuestionId">
+            <summary>Output only. The question's ID. See also Question.question_id.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Answer.TextAnswers">
+            <summary>Output only. The specific answers as text.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Answer.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.BatchUpdateFormRequest">
+            <summary>
+            A batch of updates to perform on a form. All the specified updates are made or none of them are.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.BatchUpdateFormRequest.IncludeFormInResponse">
+            <summary>Whether to return an updated version of the model in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.BatchUpdateFormRequest.Requests">
+            <summary>Required. The update requests of this batch.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.BatchUpdateFormRequest.WriteControl">
+            <summary>Provides control over how write requests are executed.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.BatchUpdateFormRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.BatchUpdateFormResponse">
+            <summary>Response to a BatchUpdateFormRequest.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.BatchUpdateFormResponse.Form">
+            <summary>
+            Based on the bool request field `include_form_in_response`, a form with all applied mutations/updates is
+            returned or not. This may be later than the revision ID created by these changes.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.BatchUpdateFormResponse.Replies">
+            <summary>
+            The reply of the updates. This maps 1:1 with the update requests, although replies to some requests may be
+            empty.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.BatchUpdateFormResponse.WriteControl">
+            <summary>The updated write control after applying the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.BatchUpdateFormResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.ChoiceQuestion">
+            <summary>A radio/checkbox/dropdown question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ChoiceQuestion.Options">
+            <summary>Required. List of options that a respondent must choose from.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ChoiceQuestion.Shuffle">
+            <summary>
+            Whether the options should be displayed in random order for different instances of the quiz. This is often
+            used to prevent cheating by respondents who might be looking at another respondent's screen, or to address
+            bias in a survey that might be introduced by always putting the same options first or last.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ChoiceQuestion.Type">
+            <summary>Required. The type of choice question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ChoiceQuestion.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.CloudPubsubTopic">
+            <summary>A Pub/Sub topic.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CloudPubsubTopic.TopicName">
+            <summary>
+            Required. A fully qualified Pub/Sub topic name to publish the events to. This topic must be owned by the
+            calling project and already exist in Pub/Sub.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CloudPubsubTopic.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.CorrectAnswer">
+            <summary>
+            A single correct answer for a question. For multiple-valued (`CHECKBOX`) questions, several `CorrectAnswer`s may
+            be needed to represent a single correct response option.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CorrectAnswer.Value">
+            <summary>
+            Required. The correct answer value. See the documentation for TextAnswer.value for details on how various
+            value types are formatted.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CorrectAnswer.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.CorrectAnswers">
+            <summary>The answer key for a question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CorrectAnswers.Answers">
+            <summary>
+            A list of correct answers. A quiz response can be automatically graded based on these answers. For
+            single-valued questions, a response is marked correct if it matches any value in this list (in other words,
+            multiple correct answers are possible). For multiple-valued (`CHECKBOX`) questions, a response is marked
+            correct if it contains exactly the values in this list.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CorrectAnswers.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.CreateItemRequest">
+            <summary>Create an item in a form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CreateItemRequest.Item">
+            <summary>Required. The item to create.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CreateItemRequest.Location">
+            <summary>Required. Where to place the new item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CreateItemRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.CreateItemResponse">
+            <summary>The result of creating an item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CreateItemResponse.ItemId">
+            <summary>The ID of the created item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CreateItemResponse.QuestionId">
+            <summary>
+            The ID of the question created as part of this item, for a question group it lists IDs of all the questions
+            created for this item.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CreateItemResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.CreateWatchRequest">
+            <summary>Create a new watch.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CreateWatchRequest.Watch">
+            <summary>Required. The watch object. No ID should be set on this object; use `watch_id` instead.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CreateWatchRequest.WatchId">
+            <summary>
+            The ID to use for the watch. If specified, the ID must not already be in use. If not specified, an ID is
+            generated. This value should be 4-63 characters, and valid characters are /a-z-/.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.CreateWatchRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.DateQuestion">
+            <summary>A date question. Date questions default to just month + day.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.DateQuestion.IncludeTime">
+            <summary>Whether to include the time as part of the question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.DateQuestion.IncludeYear">
+            <summary>Whether to include the year as part of the question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.DateQuestion.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.DeleteItemRequest">
+            <summary>Delete an item in a form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.DeleteItemRequest.Location">
+            <summary>Required. The location of the item to delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.DeleteItemRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Empty">
+            <summary>
+            A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical
+            example is to use it as the request or the response type of an API method. For instance: service Foo { rpc
+            Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Empty.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.ExtraMaterial">
+            <summary>Supplementary material to the feedback.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ExtraMaterial.Link">
+            <summary>Text feedback.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ExtraMaterial.Video">
+            <summary>Video feedback.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ExtraMaterial.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Feedback">
+            <summary>Feedback for a respondent about their response to a question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Feedback.Material">
+            <summary>
+            Additional information provided as part of the feedback, often used to point the respondent to more reading
+            and resources.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Feedback.Text">
+            <summary>Required. The main text of the feedback.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Feedback.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.FileUploadAnswer">
+            <summary>Info for a single file submitted to a file upload question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadAnswer.FileId">
+            <summary>Output only. The ID of the Google Drive file.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadAnswer.FileName">
+            <summary>Output only. The file name, as stored in Google Drive on upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadAnswer.MimeType">
+            <summary>Output only. The MIME type of the file, as stored in Google Drive on upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadAnswer.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.FileUploadAnswers">
+            <summary>All submitted files for a FileUpload question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadAnswers.Answers">
+            <summary>Output only. All submitted files for a FileUpload question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadAnswers.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.FileUploadQuestion">
+            <summary>A file upload question. The API currently does not support creating file upload questions.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadQuestion.FolderId">
+            <summary>Required. The ID of the Drive folder where uploaded files are stored.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadQuestion.MaxFileSize">
+            <summary>Maximum number of bytes allowed for any single file uploaded to this question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadQuestion.MaxFiles">
+            <summary>Maximum number of files that can be uploaded for this question in a single response.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadQuestion.Types">
+            <summary>File types accepted by this question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FileUploadQuestion.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Form">
+            <summary>
+            A Google Forms document. A form is created in Drive, and deleting a form or changing its access protections is
+            done via the [Drive API](https://developers.google.com/drive/api/v3/about-sdk).
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Form.FormId">
+            <summary>Output only. The form ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Form.Info">
+            <summary>Required. The title and description of the form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Form.Items">
+            <summary>
+            Required. A list of the form's items, which can include section headers, questions, embedded media, etc.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Form.LinkedSheetId">
+            <summary>
+            Output only. The ID of the linked Google Sheet which is accumulating responses from this Form (if such a
+            Sheet exists).
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Form.ResponderUri">
+            <summary>
+            Output only. The form URI to share with responders. This opens a page that allows the user to submit
+            responses but not edit the questions.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Form.RevisionId">
+            <summary>
+            Output only. The revision ID of the form. Used in the WriteControl in update requests to identify the
+            revision on which the changes are based. The format of the revision ID may change over time, so it should be
+            treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been
+            returned and cannot be shared across users. If the revision ID is unchanged between calls, then the form has
+            not changed. Conversely, a changed ID (for the same form and user) usually means the form has been updated;
+            however, a changed ID can also be due to internal factors such as ID format changes.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Form.Settings">
+            <summary>
+            The form's settings. This must be updated with UpdateSettingsRequest; it is ignored during `forms.create`
+            and UpdateFormInfoRequest.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Form.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.FormResponse">
+            <summary>A form response.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FormResponse.Answers">
+            <summary>Output only. The actual answers to the questions, keyed by question_id.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FormResponse.CreateTime">
+            <summary>Output only. Timestamp for the first time the response was submitted.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FormResponse.FormId">
+            <summary>Output only. The form ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FormResponse.LastSubmittedTime">
+            <summary>
+            Output only. Timestamp for the most recent time the response was submitted. Does not track changes to
+            grades.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FormResponse.RespondentEmail">
+            <summary>Output only. The email address (if collected) for the respondent.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FormResponse.ResponseId">
+            <summary>Output only. The response ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FormResponse.TotalScore">
+            <summary>
+            Output only. The total number of points the respondent received for their submission Only set if the form
+            was a quiz and the response was graded. This includes points automatically awarded via autograding adjusted
+            by any manual corrections entered by the form owner.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FormResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.FormSettings">
+            <summary>A form's settings.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FormSettings.QuizSettings">
+            <summary>Settings related to quiz forms and grading.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.FormSettings.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Grade">
+            <summary>Grade information associated with a respondent's answer to a question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grade.Correct">
+            <summary>
+            Output only. Whether the question was answered correctly or not. A zero-point score is not enough to infer
+            incorrectness, since a correctly answered question could be worth zero points.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grade.Feedback">
+            <summary>Output only. Additional feedback given for an answer.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grade.Score">
+            <summary>Output only. The numeric score awarded for the answer.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grade.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Grading">
+            <summary>Grading for a single question</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grading.CorrectAnswers">
+            <summary>
+            Required. The answer key for the question. Responses are automatically graded based on this field.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grading.GeneralFeedback">
+            <summary>
+            The feedback displayed for all answers. This is commonly used for short answer questions when a quiz owner
+            wants to quickly give respondents some sense of whether they answered the question correctly before they've
+            had a chance to officially grade the response. General feedback cannot be set for automatically graded
+            multiple choice questions.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grading.PointValue">
+            <summary>
+            Required. The maximum number of points a respondent can automatically get for a correct answer. This must
+            not be negative.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grading.WhenRight">
+            <summary>
+            The feedback displayed for correct responses. This feedback can only be set for multiple choice questions
+            that have correct answers provided.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grading.WhenWrong">
+            <summary>
+            The feedback displayed for incorrect responses. This feedback can only be set for multiple choice questions
+            that have correct answers provided.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grading.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Grid">
+            <summary>
+            A grid of choices (radio or check boxes) with each row constituting a separate question. Each row has the same
+            choices, which are shown as the columns.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grid.Columns">
+            <summary>
+            Required. The choices shared by each question in the grid. In other words, the values of the columns. Only
+            `CHECK_BOX` and `RADIO` choices are allowed.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grid.ShuffleQuestions">
+            <summary>
+            If `true`, the questions are randomly ordered. In other words, the rows appear in a different order for
+            every respondent.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Grid.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Image">
+            <summary>Data representing an image.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Image.AltText">
+            <summary>A description of the image that is shown on hover and read by screenreaders.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Image.ContentUri">
+            <summary>
+            Output only. A URI from which you can download the image; this is valid only for a limited time.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Image.Properties">
+            <summary>Properties of an image.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Image.SourceUri">
+            <summary>
+            Input only. The source URI is the URI used to insert the image. The source URI can be empty when fetched.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Image.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.ImageItem">
+            <summary>An item containing an image.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ImageItem.Image">
+            <summary>Required. The image displayed in the item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ImageItem.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Info">
+            <summary>The general information for a form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Info.Description">
+            <summary>The description of the form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Info.DocumentTitle">
+            <summary>
+            Output only. The title of the document which is visible in Drive. If `Info.title` is empty, `document_title`
+            may appear in its place in the Google Forms UI and be visible to responders. `document_title` can be set on
+            create, but cannot be modified by a batchUpdate request. Please use the [Google Drive
+            API](https://developers.google.com/drive/api/v3/reference/files/update) if you need to programmatically
+            update `document_title`.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Info.Title">
+            <summary>Required. The title of the form which is visible to responders.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Info.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Item">
+            <summary>A single item of the form. `kind` defines which kind of item it is.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Item.Description">
+            <summary>The description of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Item.ImageItem">
+            <summary>Displays an image on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Item.ItemId">
+            <summary>
+            The item ID. On creation, it can be provided but the ID must not be already used in the form. If not
+            provided, a new ID is assigned.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Item.PageBreakItem">
+            <summary>Starts a new page with a title.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Item.QuestionGroupItem">
+            <summary>Poses one or more questions to the user with a single major prompt.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Item.QuestionItem">
+            <summary>Poses a question to the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Item.TextItem">
+            <summary>Displays a title and description on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Item.Title">
+            <summary>The title of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Item.VideoItem">
+            <summary>Displays a video on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Item.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.ListFormResponsesResponse">
+            <summary>Response to a ListFormResponsesRequest.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ListFormResponsesResponse.NextPageToken">
+            <summary>
+            If set, there are more responses. To get the next page of responses, provide this as `page_token` in a
+            future request.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ListFormResponsesResponse.Responses">
+            <summary>
+            The returned form responses. Note: The `formId` field is not returned in the `FormResponse` object for list
+            requests.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ListFormResponsesResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.ListWatchesResponse">
+            <summary>The response of a ListWatchesRequest.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ListWatchesResponse.Watches">
+            <summary>The returned watches.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ListWatchesResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Location">
+            <summary>A specific location in a form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Location.Index">
+            <summary>
+            The index of an item in the form. This must be in the range [0..*N*), where *N* is the number of items in
+            the form.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Location.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.MediaProperties">
+            <summary>Properties of the media.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.MediaProperties.Alignment">
+            <summary>Position of the media.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.MediaProperties.Width">
+            <summary>
+            The width of the media in pixels. When the media is displayed, it is scaled to the smaller of this value or
+            the width of the displayed form. The original aspect ratio of the media is preserved. If a width is not
+            specified when the media is added to the form, it is set to the width of the media source. Width must be
+            between 0 and 740, inclusive. Setting width to 0 or unspecified is only permitted when updating the media
+            source.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.MediaProperties.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.MoveItemRequest">
+            <summary>Move an item in a form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.MoveItemRequest.NewLocation">
+            <summary>Required. The new location for the item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.MoveItemRequest.OriginalLocation">
+            <summary>Required. The location of the item to move.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.MoveItemRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Option">
+            <summary>An option for a Choice question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Option.GoToAction">
+            <summary>Section navigation type.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Option.GoToSectionId">
+            <summary>Item ID of section header to go to.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Option.Image">
+            <summary>Display image as an option.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Option.IsOther">
+            <summary>
+            Whether the option is "other". Currently only applies to `RADIO` and `CHECKBOX` choice types, but is not
+            allowed in a QuestionGroupItem.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Option.Value">
+            <summary>Required. The choice as presented to the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Option.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.PageBreakItem">
+            <summary>A page break. The title and description of this item are shown at the top of the new page.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.PageBreakItem.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Question">
+            <summary>Any question. The specific type of question is known by its `kind`.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.ChoiceQuestion">
+            <summary>A respondent can choose from a pre-defined set of options.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.DateQuestion">
+            <summary>A respondent can enter a date.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.FileUploadQuestion">
+            <summary>A respondent can upload one or more files.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.Grading">
+            <summary>Grading setup for the question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.QuestionId">
+            <summary>
+            Read only. The question ID. On creation, it can be provided but the ID must not be already used in the form.
+            If not provided, a new ID is assigned.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.Required">
+            <summary>Whether the question must be answered in order for a respondent to submit their response.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.RowQuestion">
+            <summary>A row of a QuestionGroupItem.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.ScaleQuestion">
+            <summary>A respondent can choose a number from a range.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.TextQuestion">
+            <summary>A respondent can enter a free text response.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.TimeQuestion">
+            <summary>A respondent can enter a time.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Question.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.QuestionGroupItem">
+            <summary>Defines a question that comprises multiple questions grouped together.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.QuestionGroupItem.Grid">
+            <summary>
+            The question group is a grid with rows of multiple choice questions that share the same options. When `grid`
+            is set, all questions in the group must be of kind `row`.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.QuestionGroupItem.Image">
+            <summary>The image displayed within the question group above the specific questions.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.QuestionGroupItem.Questions">
+            <summary>
+            Required. A list of questions that belong in this question group. A question must only belong to one group.
+            The `kind` of the group may affect what types of questions are allowed.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.QuestionGroupItem.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.QuestionItem">
+            <summary>A form item containing a single question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.QuestionItem.Image">
+            <summary>The image displayed within the question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.QuestionItem.Question">
+            <summary>Required. The displayed question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.QuestionItem.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.QuizSettings">
+            <summary>
+            Settings related to quiz forms and grading. These must be updated with the UpdateSettingsRequest.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.QuizSettings.IsQuiz">
+            <summary>
+            Whether this form is a quiz or not. When true, responses are graded based on question Grading. Upon setting
+            to false, all question Grading is deleted.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.QuizSettings.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.RenewWatchRequest">
+            <summary>Renew an existing Watch for seven days.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.RenewWatchRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Request">
+            <summary>The kinds of update requests that can be made.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Request.CreateItem">
+            <summary>Create a new item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Request.DeleteItem">
+            <summary>Delete an item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Request.MoveItem">
+            <summary>Move an item to a specified location.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Request.UpdateFormInfo">
+            <summary>Update Form's Info.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Request.UpdateItem">
+            <summary>Update an item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Request.UpdateSettings">
+            <summary>Updates the Form's settings.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Request.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Response">
+            <summary>A single response from an update.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Response.CreateItem">
+            <summary>The result of creating an item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Response.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.RowQuestion">
+            <summary>Configuration for a question that is part of a question group.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.RowQuestion.Title">
+            <summary>Required. The title for the single row in the QuestionGroupItem.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.RowQuestion.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.ScaleQuestion">
+            <summary>A scale question. The user has a range of numeric values to choose from.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ScaleQuestion.High">
+            <summary>Required. The highest possible value for the scale.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ScaleQuestion.HighLabel">
+            <summary>The label to display describing the highest point on the scale.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ScaleQuestion.Low">
+            <summary>Required. The lowest possible value for the scale.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ScaleQuestion.LowLabel">
+            <summary>The label to display describing the lowest point on the scale.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.ScaleQuestion.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.TextAnswer">
+            <summary>An answer to a question represented as text.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TextAnswer.Value">
+            <summary>
+            Output only. The answer value. Formatting used for different kinds of question: * ChoiceQuestion * `RADIO`
+            or `DROP_DOWN`: A single string corresponding to the option that was selected. * `CHECKBOX`: Multiple
+            strings corresponding to each option that was selected. * TextQuestion: The text that the user entered. *
+            ScaleQuestion: A string containing the number that was selected. * DateQuestion * Without time or year:
+            MM-DD e.g. "05-19" * With year: YYYY-MM-DD e.g. "1986-05-19" * With time: MM-DD HH:MM e.g. "05-19 14:51" *
+            With year and time: YYYY-MM-DD HH:MM e.g. "1986-05-19 14:51" * TimeQuestion: String with time or duration in
+            HH:MM format e.g. "14:51" * RowQuestion within QuestionGroupItem: The answer for each row of a
+            QuestionGroupItem is represented as a separate Answer. Each will contain one string for `RADIO`-type choices
+            or multiple strings for `CHECKBOX` choices.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TextAnswer.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.TextAnswers">
+            <summary>A question's answers as text.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TextAnswers.Answers">
+            <summary>
+            Output only. Answers to a question. For multiple-value ChoiceQuestions, each answer is a separate value.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TextAnswers.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.TextItem">
+            <summary>A text item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TextItem.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.TextLink">
+            <summary>Link for text.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TextLink.DisplayText">
+            <summary>Required. Display text for the URI.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TextLink.Uri">
+            <summary>Required. The URI.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TextLink.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.TextQuestion">
+            <summary>A text-based question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TextQuestion.Paragraph">
+            <summary>
+            Whether the question is a paragraph question or not. If not, the question is a short text question.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TextQuestion.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.TimeQuestion">
+            <summary>A time question.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TimeQuestion.Duration">
+            <summary>`true` if the question is about an elapsed time. Otherwise it is about a time of day.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.TimeQuestion.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.UpdateFormInfoRequest">
+            <summary>Update Form's Info.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.UpdateFormInfoRequest.Info">
+            <summary>The info to update.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.UpdateFormInfoRequest.UpdateMask">
+            <summary>
+            Required. Only values named in this mask are changed. At least one field must be specified. The root `info`
+            is implied and should not be specified. A single `"*"` can be used as short-hand for updating every field.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.UpdateFormInfoRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.UpdateItemRequest">
+            <summary>Update an item in a form.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.UpdateItemRequest.Item">
+            <summary>
+            Required. New values for the item. Note that item and question IDs are used if they are provided (and are in
+            the field mask). If an ID is blank (and in the field mask) a new ID is generated. This means you can modify
+            an item by getting the form via forms.get, modifying your local copy of that item to be how you want it, and
+            using UpdateItemRequest to write it back, with the IDs being the same (or not in the field mask).
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.UpdateItemRequest.Location">
+            <summary>Required. The location identifying the item to update.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.UpdateItemRequest.UpdateMask">
+            <summary>Required. Only values named in this mask are changed.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.UpdateItemRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.UpdateSettingsRequest">
+            <summary>Update Form's FormSettings.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.UpdateSettingsRequest.Settings">
+            <summary>Required. The settings to update with.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.UpdateSettingsRequest.UpdateMask">
+            <summary>
+            Required. Only values named in this mask are changed. At least one field must be specified. The root
+            `settings` is implied and should not be specified. A single `"*"` can be used as short-hand for updating
+            every field.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.UpdateSettingsRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Video">
+            <summary>Data representing a video.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Video.Properties">
+            <summary>Properties of a video.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Video.YoutubeUri">
+            <summary>Required. A YouTube URI.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Video.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.VideoItem">
+            <summary>An item containing a video.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.VideoItem.Caption">
+            <summary>The text displayed below the video.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.VideoItem.Video">
+            <summary>Required. The video displayed in the item.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.VideoItem.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.VideoLink">
+            <summary>Link to a video.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.VideoLink.DisplayText">
+            <summary>Required. The display text for the link.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.VideoLink.YoutubeUri">
+            <summary>The URI of a YouTube video.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.VideoLink.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.Watch">
+            <summary>
+            A watch for events for a form. When the designated event happens, a notification will be published to the
+            specified target. The notification's attributes will include a `formId` key that has the ID of the watched form
+            and an `eventType` key that has the string of the type. Messages are sent with at-least-once delivery and are
+            only dropped in extraordinary circumstances. Typically all notifications should be reliably delivered within a
+            few seconds; however, in some situations notifications may be delayed. A watch expires seven days after it is
+            created unless it is renewed with watches.renew
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Watch.CreateTime">
+            <summary>Output only. Timestamp of when this was created.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Watch.ErrorType">
+            <summary>
+            Output only. The most recent error type for an attempted delivery. To begin watching the form again a call
+            can be made to watches.renew which also clears this error information.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Watch.EventType">
+            <summary>Required. Which event type to watch for.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Watch.ExpireTime">
+            <summary>
+            Output only. Timestamp for when this will expire. Each watches.renew call resets this to seven days in the
+            future.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Watch.Id">
+            <summary>Output only. The ID of this watch. See notes on CreateWatchRequest.watch_id.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Watch.State">
+            <summary>
+            Output only. The current state of the watch. Additional details about suspended watches can be found by
+            checking the `error_type`.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Watch.Target">
+            <summary>Required. Where to send the notification.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.Watch.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.WatchTarget">
+            <summary>The target for notification delivery.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.WatchTarget.Topic">
+            <summary>
+            A Pub/Sub topic. To receive notifications, the topic must grant publish privileges to the Forms service
+            account `serviceAccount:forms-notifications@system.gserviceaccount.com`. Only the project that owns a topic
+            may create a watch with it. Pub/Sub delivery guarantees should be considered.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.WatchTarget.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Forms.v1.Data.WriteControl">
+            <summary>Provides control over how write requests are executed.</summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.WriteControl.RequiredRevisionId">
+            <summary>
+            The revision ID of the form that the write request is applied to. If this is not the latest revision of the
+            form, the request is not processed and returns a 400 bad request error.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.WriteControl.TargetRevisionId">
+            <summary>
+            The target revision ID of the form that the write request is applied to. If changes have occurred after this
+            revision, the changes in this update request are transformed against those changes. This results in a new
+            revision of the form that incorporates both the changes in the request and the intervening changes, with the
+            server resolving conflicting changes. The target revision ID may only be used to write to recent versions of
+            a form. If the target revision is too far behind the latest revision, the request is not processed and
+            returns a 400 (Bad Request Error). The request may be retried after reading the latest version of the form.
+            In most cases a target revision ID remains valid for several minutes after it is read, but for
+            frequently-edited forms this window may be shorter.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Forms.v1.Data.WriteControl.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,5 @@
+Sistema de ayuda con el comando «EXPORTAR»
+
+DESCRIPCIÓN:
+Genera un reporte de las correcciones realizadas y enviadas, este te indicará qué se corrigió, cuándo se envió y si ya se aplicó su corrección.
+Se generará un archivo de Excel donde deberás guardarlo en alguna carpeta, por si la coordinación llegara a necesitarlo.

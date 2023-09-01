@@ -1,0 +1,18 @@
+TSI | Taller de Soluciones Integrales
+®Algunos derechos reservados
+
+Aplicación creada mediante Visual Studio en C#, usando la plataforma de .NET Framework 4.8 para su implementación.
+
+Este programa sirve para realizar el cotejo de información de fichas catalográficas existentes en Prometeo V, cotejado con una tabla de Excel para enviar las comprobaciones y correcciones de errores a un servicio web de Google Forms para su corrección en el área laboral correspondiente.
+El contenido de este programa se rige bajo la licencia de «GNU Public License», por lo que su distribución, modificación y compilación no está sujeta a acciones legales pertinentes.
+
+Por ende, este programa podrá solo ser usado sólo en el equipo que fué instalado, no es posible portarlo a otro equipo.
+Si así se hiciese, este programa se bloqueará automáticamente.
+
+		▄───▄
+		█▀█▀█
+		█▄█▄█		Creado por un bibliotecario que estaba cansado de hacer triple trabajo
+		─███──▄▄		Espero te sea de ayuda :)
+		─████▐█─█
+		─████───█	Versión del programa: beta 1.0.100.2588 (Junio del 2023)
+		─▀▀▀▀▀▀▀

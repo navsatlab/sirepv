@@ -1,0 +1,9 @@
+Commandes avancées de l'application
+Utilisez cette section uniquement si vous êtes conscient de ce que vous devez modifier.
+
+--ForceConvert		Forcez la conversion de la base de données MDB vers une base de données SQL
+--ResetAll		Supprimez toutes les données de l'utilisateur et commencez une nouvelle configuration
+--NoConvert		Ignorez la conversion de la base de données lors du démarrage
+--Debug			Show current debug messages for the application
+
+Si vous souhaitez en savoir plus sur l'utilisation de ces commandes avancées, veuillez contacter le bibliothécaire qui a développé ce système afin qu'il puisse vous guider sur leur utilisation spécifique.

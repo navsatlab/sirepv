@@ -1,0 +1,9 @@
+Cette section du programme n'a pas encore été implémentée. Veuillez attendre la prochaine mise à jour du programme où vous pourrez utiliser cette fonctionnalité.
+
+		▄───▄
+		█▀█▀█
+		█▄█▄█
+		─███──▄▄		ThrowNotImplemetedException (Soulever une exception de non-implémentation)
+		─████▐█─█		Désolée :(
+		─████───█
+		─▀▀▀▀▀▀▀

@@ -1,0 +1,6 @@
+Sistema de ayuda con el comando «VER»
+
+DESCRIPCIÓN:
+Muestra todos los cambios más recientes realizados con las actualizaciones de la base de datos. Te permite ver qué se modificó y la opción de comparar los datos nuevos con los anteriores.
+
+Se mostrará una ventana donde podrás ver las fichas catalográficas corregidas y agregadas, y un resumen general de éstas.
