@@ -22,14 +22,13 @@ Attribute VB_Exposed = False
 
 Option Explicit
 
-Dim lPosition As Long
-Dim lReset As Boolean
-Dim lLoad As Boolean
+Private lPosition As Long
+Private lReset As Boolean, lLoad As Boolean
 
-Dim xClasificacion, xFolio, xNotas, xFicha As Long
-Dim HTMLFicha As String, HTMLPrint() As String
+Private xClasificacion, xFolio, xNotas, xFicha As Long
+Private HTMLFicha As String, HTMLPrint() As String
 
-Const HTMLHeader As String = "<!DOCTYPE html><head><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>body{justify-content: center;align-items: center;}.iframe-container {width: 5in;height: 3in;float: left;overflow: hidden;}iframe{width: 100%;height: 100%;}table, th, td {border: 1px solid black;border-collapse: collapse;}</style></head>"
+Private Const HTMLHeader As String = "<!DOCTYPE html><head><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>body{justify-content: center;align-items: center;}.iframe-container {width: 5in;height: 3in;float: left;overflow: hidden;}iframe{width: 100%;height: 100%;}table, th, td {border: 1px solid black;border-collapse: collapse;}</style></head>"
 
 Private Sub FillExcelData(ID As Long)
     If ID = 0 Then

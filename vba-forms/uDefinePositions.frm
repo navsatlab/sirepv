@@ -22,7 +22,7 @@ Attribute VB_Exposed = False
 
 Option Explicit
 
-Dim SetModify As Boolean
+Private SetModify As Boolean
 
 Private Sub cAddItem_Click()
     pVista.ListItems.Add

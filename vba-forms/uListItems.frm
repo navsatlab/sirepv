@@ -22,7 +22,7 @@ Attribute VB_Exposed = False
 
 Option Explicit
 
-Dim cName As String
+Private cName As String
 
 Private Sub InitArray(Optional columnName As String = "Editorial")
     Dim tbl As ListObject
@@ -186,9 +186,6 @@ Private Sub UserForm_Initialize()
         MsgBox "La tabla especificada no fue encontrada.", vbExclamation
         Exit Sub
     End If
-    
-    cHead.Clear
-    cHead.Style = fmStyleDropDownList
     
     For Each col In tbl.ListColumns
         cHead.AddItem col.Name

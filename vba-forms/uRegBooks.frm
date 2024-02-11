@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} uRegBooks 
    Caption         =   "Registro de libros consultados en sala"
-   ClientHeight    =   7710
+   ClientHeight    =   8475.001
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   15090
@@ -22,13 +22,14 @@ Attribute VB_Exposed = False
 
 Option Explicit
 
-Dim BookCount As Integer, UserBooks() As ReadedBooks
-Dim xTitulo, xCol, xCha, xSeccion, xFolio, xClasificacion As Integer, xAutor As Integer, xTAGS As Integer
-Dim objSection As Object, objItems() As String
+Private BookCount As Integer, UserBooks() As ReadedBooks
+Private xTitulo, xCol, xCha, xSeccion, xFolio, xClasificacion As Integer, XAutor As Integer, xTAGS As Integer
+Private objSection As Object, objItems() As String
 
 Private Type ReadedBooks
     Name As String
-    section As String
+    Autor As String
+    Section As String
 End Type
 
 Private Function LoadWebData(ID As String) As tabID
@@ -63,6 +64,7 @@ Private Sub FillExcelData(ID As Long)
 
     Set content = ThisWorkbook.Sheets(tSheet).ListObjects(tTable)
     tTitulo.text = Trim(content.Range(ID, xTitulo))
+    tAutor.text = Trim(content.Range(ID, XAutor))
     tSection.Caption = Replace(Trim(content.Range(ID, xSeccion)), Chr(10), " -> ")
     
     Dim pos As Integer
@@ -83,7 +85,7 @@ Private Sub FillExcelData(ID As Long)
             If UBound(lContent) = -1 Then _
                 lSkip = False
             For Each Value In lContent
-                If Value = "0x14" Or Value = "0xFF" Then
+                If Value = "0x14" Or Value = "0x1C" Or Value = "0xFF" Or Value = "0x1E" Then
                     lSkip = True
                 Else
                     lSkip = False
@@ -94,7 +96,7 @@ Private Sub FillExcelData(ID As Long)
             Else: i = i + 1
             End If
         Loop
-        tBack.Caption = " " & content.Range(ID - i, xClasificacion) & " | " & content.Range(ID - i, xFolio) & vbNewLine & " " & content.Range(ID - i, xTitulo) & " / " & content.Range(ID - i, xAutor)
+        tBack.Caption = " " & content.Range(ID - i, xClasificacion) & " | " & content.Range(ID - i, xFolio) & vbNewLine & " " & content.Range(ID - i, xTitulo) & " / " & content.Range(ID - i, XAutor)
         
         i = 1
         lSkip = False
@@ -103,7 +105,7 @@ Private Sub FillExcelData(ID As Long)
             If UBound(lContent) = -1 Then _
                 lSkip = False
             For Each Value In lContent
-                If Value = "0x14" Or Value = "0xFF" Then
+                If Value = "0x14" Or Value = "0x1C" Or Value = "0xFF" Or Value = "0x1E" Then
                     lSkip = True
                 Else
                     lSkip = False
@@ -114,7 +116,7 @@ Private Sub FillExcelData(ID As Long)
             Else: i = i + 1
             End If
         Loop
-        tNext.Caption = " " & content.Range(ID + i, xClasificacion) & " | " & content.Range(ID + i, xFolio) & vbNewLine & " " & content.Range(ID + i, xTitulo) & " / " & content.Range(ID + i, xAutor)
+        tNext.Caption = " " & content.Range(ID + i, xClasificacion) & " | " & content.Range(ID + i, xFolio) & vbNewLine & " " & content.Range(ID + i, xTitulo) & " / " & content.Range(ID + i, XAutor)
     End If
 End Sub
 
@@ -134,7 +136,8 @@ Private Sub cAdd_Click()
         ReDim Preserve UserBooks(UBound(UserBooks) + 1)
     End If
     UserBooks(UBound(UserBooks)).Name = Trim(tTitulo.text)
-    UserBooks(UBound(UserBooks)).section = Trim(tSeccion.text)
+    UserBooks(UBound(UserBooks)).Autor = Trim(tAutor.text)
+    UserBooks(UBound(UserBooks)).Section = Trim(tSeccion.text)
     BookCount = BookCount + 1
     
     tColumna.Caption = ""
@@ -143,6 +146,7 @@ Private Sub cAdd_Click()
     tBack.Caption = ""
     tNext.Caption = ""
     tTitulo.text = ""
+    tAutor.text = ""
     tSeccion.text = ""
     tSeccion.Clear
     wFicha.Navigate "about:blank"
@@ -169,6 +173,7 @@ Private Sub cClean_Click()
     tBack.Caption = ""
     tNext.Caption = ""
     tTitulo.text = ""
+    tAutor.text = ""
     tSeccion.text = ""
     tSeccion.Clear
     wFicha.Navigate "about:blank"
@@ -220,6 +225,8 @@ Private Sub cLocate_Click()
         Next lData
         LocalData = True
     ElseIf lPosition = 0 Then
+        tAutor.text = out.MARC100
+        
         Dim pos As Integer
         pos = InStr(out.MARC245, "/")
         If pos = 0 Then _
@@ -288,9 +295,10 @@ Private Sub cRegister_Click()
         Set row = content.ListRows.Add
         row.Range(1) = Now
         row.Range(2) = UserBooks(i).Name
-        row.Range(3) = UserBooks(i).section
+        row.Range(3) = UserBooks(i).Autor
+        row.Range(4) = UserBooks(i).Section
         If i = 0 Then _
-            row.Range(4) = Trim(tUsuarios.text)
+            row.Range(5) = Trim(tUsuarios.text)
         Set row = Nothing
     Next i
     
@@ -304,6 +312,7 @@ Private Sub cRegister_Click()
     tBack.Caption = ""
     tNext.Caption = ""
     tTitulo.text = ""
+    tAutor.text = ""
     tSeccion.text = ""
     tSeccion.Clear
     wFicha.Navigate "about:blank"
@@ -348,7 +357,7 @@ Private Sub UserForm_Initialize()
     xFolio = GetPos("N° de adquisición")
     xSeccion = GetPos("Área que pertenece")
     xClasificacion = GetPos("Clasificación")
-    xAutor = GetPos("Autor")
+    XAutor = GetPos("Autor")
     xTAGS = GetPos("TAGS")
     
     Set Data = ThisWorkbook.Sheets(tSheet).ListObjects(tTable)

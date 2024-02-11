@@ -36,6 +36,10 @@ Private Sub cCotejo_Click()
     LoadCompare
 End Sub
 
+Private Sub cGuias_Click()
+    LoadMakeRefs
+End Sub
+
 Private Sub cImprimir_Click()
     LoadPrint
 End Sub
@@ -53,5 +57,7 @@ Private Sub Worksheet_Activate()
     cImprimir.Caption = "Imprimir fichas" & vbNewLine & "Ctrl + Shift + P"
     cCambiar.Caption = "Cambiar tabla" & vbNewLine & "Ctrl + Shift + S"
     cBuscar.Caption = "Consulta" & vbNewLine & "Ctrl + Shift + F"
+    
+    lblSystem.Caption = SysVersion
 End Sub
 

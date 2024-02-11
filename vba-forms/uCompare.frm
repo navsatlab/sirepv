@@ -22,11 +22,11 @@ Attribute VB_Exposed = False
 
 Option Explicit
 
-Dim lPosition As Long
-Dim lReset As Boolean, IsOutside As Boolean, lDataModified As Boolean
+Private lPosition As Long
+Private lReset As Boolean, IsOutside As Boolean, lDataModified As Boolean
 
-Dim xTitulo, xAutor, xEditorial, xDonante, xAño, xPais, xClasificacion, xFolio, xNotas, xCol, xCha, xSeccion, xIdioma, xTAGS As Integer
-Dim nFicha As String, nISBN As String
+Private xTitulo, XAutor, xEditorial, xDonante, xAño, xPais, xClasificacion, xFolio, xNotas, xCol, xCha, xSeccion, xIdioma, xTAGS As Integer
+Private nFicha As String, nISBN As String
 
 Private Sub FillExcelData(ID As Long)
     'On Error Resume Next
@@ -34,7 +34,7 @@ Private Sub FillExcelData(ID As Long)
 
     Set content = ThisWorkbook.Sheets(tSheet).ListObjects(tTable)
     tTitulo.text = Trim(content.Range(ID, xTitulo))
-    tAutor.text = Trim(content.Range(ID, xAutor))
+    tAutor.text = Trim(content.Range(ID, XAutor))
     tPais.text = Trim(content.Range(ID, xPais))
     tEditorial.text = Trim(content.Range(ID, xEditorial))
     tAño.text = Trim(content.Range(ID, xAño))
@@ -58,14 +58,20 @@ Private Sub FillExcelData(ID As Long)
         ch14.Value = False
         chFF.Value = False
         ch1A.Value = False
+        ch1C.Value = False
+        ch1E.Value = False
         
         For Each Value In lData
             If Value = "0x10" Then      ' CI
                 ch10.Value = True
-            ElseIf Value = "0x12" Then  ' Restaurar
+            ElseIf Value = "0x12" Then  ' Para restaurar
                 ch12.Value = True
+            ElseIf Value = "0x1E" Then  ' Libro de Gran Formato
+                ch1E.Value = True
             ElseIf Value = "0x1A" Then  ' Libro con errores en ficha
                 ch1A.Value = True
+            ElseIf Value = "0x1C" Then  ' En restauración
+                ch1C.Value = True
             ElseIf Value = "0x14" Then  ' En catalogación
                 ch14.Value = True
             ElseIf Value = "0xFF" Then  ' Perdido
@@ -81,7 +87,7 @@ Private Sub FillExcelData(ID As Long)
             If UBound(lContent) = -1 Then _
                 lSkip = False
             For Each Value In lContent
-                If Value = "0x14" Or Value = "0xFF" Then
+                If Value = "0x14" Or Value = "0x1C" Or Value = "0xFF" Or Value = "0x1E" Then
                     lSkip = True
                 Else
                     lSkip = False
@@ -92,7 +98,7 @@ Private Sub FillExcelData(ID As Long)
             Else: i = i + 1
             End If
         Loop
-        tBack.Caption = " " & content.Range(ID - i, xClasificacion) & " | " & content.Range(ID - i, xFolio) & vbNewLine & " " & content.Range(ID - i, xTitulo) & " / " & content.Range(ID - i, xAutor)
+        tBack.Caption = " " & content.Range(ID - i, xClasificacion) & " | " & content.Range(ID - i, xFolio) & vbNewLine & " " & content.Range(ID - i, xTitulo) & " / " & content.Range(ID - i, XAutor)
         
         i = 1
         lSkip = False
@@ -101,7 +107,7 @@ Private Sub FillExcelData(ID As Long)
             If UBound(lContent) = -1 Then _
                 lSkip = False
             For Each Value In lContent
-                If Value = "0x14" Or Value = "0xFF" Then
+                If Value = "0x14" Or Value = "0x1C" Or Value = "0xFF" Or Value = "0x1E" Then
                     lSkip = True
                 Else
                     lSkip = False
@@ -112,21 +118,21 @@ Private Sub FillExcelData(ID As Long)
             Else: i = i + 1
             End If
         Loop
-        tNext.Caption = " " & content.Range(ID + i, xClasificacion) & " | " & content.Range(ID + i, xFolio) & vbNewLine & " " & content.Range(ID + i, xTitulo) & " / " & content.Range(ID + i, xAutor)
-        
-        If cBack.Enabled = False Then cBack.Enabled = True
-        If cNext.Enabled = False Then cNext.Enabled = True
-        
-        If lPosition <= 2 Then
-            cBack.Enabled = False
-            tBack.Caption = " Libro al principio del inventario"
-        End If
-        If lPosition >= ThisWorkbook.Sheets(tSheet).ListObjects(tTable).Range.Rows.Count Then
-            cNext.Enabled = False
-            tNext.Caption = " Libro al final del inventario"
-        End If
+        tNext.Caption = " " & content.Range(ID + i, xClasificacion) & " | " & content.Range(ID + i, xFolio) & vbNewLine & " " & content.Range(ID + i, xTitulo) & " / " & content.Range(ID + i, XAutor)
     End If
     
+    If cBack.Enabled = False Then cBack.Enabled = True
+    If cNext.Enabled = False Then cNext.Enabled = True
+    cSelect.Enabled = True
+    
+    If lPosition <= 2 Then
+        cBack.Enabled = False
+        tBack.Caption = " Libro al principio del inventario"
+    End If
+    If lPosition >= ThisWorkbook.Sheets(tSheet).ListObjects(tTable).Range.Rows.Count Then
+        cNext.Enabled = False
+        tNext.Caption = " Libro al final del inventario"
+    End If
     'MsgBox ArrangeLC(content.Range(ID, xClasificacion), content.Range(ID - 1, xClasificacion))
 End Sub
 
@@ -139,35 +145,51 @@ Private Sub RedrawLabel()
     If ch10.Value Then      ' CI
         lState.ForeColor = RGB(255, 0, 0)
         lState.Visible = True
-        lState.Caption = "Libro de Consulta Interna"
+        lState.Caption = " Libro de Consulta Interna" & vbNewLine & _
+            " Libro que no sale para préstamo a domicilio"
     End If
-    If ch12.Value Then  ' Restaurar
+    If ch12.Value Then  ' Para restaurar
         lState.BackColor = RGB(255, 255, 0)
         lState.Visible = True
-        lState.Caption = "Libro que necesita restauración"
+        lState.Caption = " Libro que necesita restauración" & vbNewLine & _
+            " Por favor especifica en las Notas el diagnóstico del libro"
     End If
-    If ch10.Value And ch12.Value Then ' CI + Restaurar
+    If ch10.Value And ch12.Value Then ' CI + Para restaurar
         lState.BackColor = RGB(255, 255, 0)
         lState.ForeColor = RGB(255, 0, 0)
-        lState.Caption = "Libro de Consulta Interna y necesita restauración"
+        lState.Caption = " Libro de Consulta Interna que necesita restauración" & vbNewLine & _
+            " Por favor especifica en las Notas el diagnóstico del libro"
         lState.Visible = True
+    End If
+    If ch1E.Value Then  ' Libro de Gran Formato
+        lState.BackColor = RGB(230, 230, 250)
+        lState.Visible = True
+        lState.Caption = " Libro de Gran Formato" & vbNewLine & _
+            " Ubicado en otra área designada por sus dimensiones"
     End If
     If ch1A.Value Then  ' Libro con errores en ficha
         lState.BackColor = RGB(204, 255, 255)
         lState.Visible = True
-        lState.Caption = "Libro con posibles errores en ficha"
+        lState.Caption = " Libro con posibles errores en ficha" & vbNewLine & _
+            " Por favor verifica los datos de la ficha catalográfica"
+    End If
+    If ch1C.Value Then  ' En restauración
+        lState.BackColor = RGB(146, 208, 80)
+        lState.Visible = True
+        lState.Caption = " Libro en restauración" & vbNewLine & _
+            " Libro fuera de charola que se está restaurando"
     End If
     If ch14.Value Then   ' En catalogación
-        lState.BackColor = RGB(0, 128, 128)
+        lState.BackColor = RGB(51, 51, 0)
         lState.ForeColor = RGB(255, 255, 255)
         lState.Visible = True
-        lState.Caption = "El libro está en catalogación"
+        lState.Caption = " El libro se encuentra actualmente en catalogación"
     End If
     If chFF.Value Then   ' Perdido
         lState.BackColor = RGB(128, 0, 0)
         lState.ForeColor = RGB(255, 255, 255)
         lState.Visible = True
-        lState.Caption = "El libro se encuentra perdido"
+        lState.Caption = " El libro se encuentra perdido / no ha sido encontrado"
     End If
 End Sub
 
@@ -176,7 +198,7 @@ Private Sub SaveExcelData(ID As Long)
 
     Set content = ThisWorkbook.Sheets(tSheet).ListObjects(tTable)
     content.Range(ID, xTitulo) = Trim(tTitulo.text)
-    content.Range(ID, xAutor) = Trim(tAutor.text)
+    content.Range(ID, XAutor) = Trim(tAutor.text)
     content.Range(ID, xPais) = Trim(tPais.text)
     content.Range(ID, xEditorial) = Trim(tEditorial.text)
     content.Range(ID, xAño) = Trim(tAño.text)
@@ -208,32 +230,44 @@ Private Sub SaveExcelData(ID As Long)
             content.Range(ID, i).Interior.ColorIndex = 0
             content.Range(ID, i).Font.ColorIndex = 1
         Next i
-        If ch10.Value = True Then
+        If ch10.Value Then
             lData = lData & "0x10;" ' CI
             For i = xCol To xSeccion
                 content.Range(ID, i).Font.ColorIndex = 3
             Next i
         End If
-        If ch12.Value = True Then
-            lData = lData & "0x12;" ' Restaurar
+        If ch12.Value Then
+            lData = lData & "0x12;" ' Para restaurar
             For i = xCol To xSeccion
                 content.Range(ID, i).Interior.ColorIndex = 6
             Next i
         End If
-        If ch1A.Value = True Then
+        If ch1E.Value Then
+            lData = lData & "0x1E;" ' Libro de Gran Formato
+            For i = xCol To xSeccion
+                content.Range(ID, i).Interior.Color = rgbLavender
+            Next i
+        End If
+        If ch1A.Value Then
             lData = lData & "0x1A;" ' Libro con errores en ficha
             For i = xCol To xSeccion
                 content.Range(ID, i).Interior.Color = rgbPaleTurquoise
             Next i
         End If
-        If ch14.Value = True Then
+        If ch1C.Value Then
+            lData = lData & "0x1C;" ' En restauración
+            For i = xCol To xSeccion
+                content.Range(ID, i).Interior.Color = rgbYellowGreen
+            Next i
+        End If
+        If ch14.Value Then
             lData = lData & "0x14;" ' En catalogación
             For i = xCol To xSeccion
-                content.Range(ID, i).Interior.ColorIndex = 14
+                content.Range(ID, i).Interior.ColorIndex = 52
                 content.Range(ID, i).Font.ColorIndex = 2
             Next i
         End If
-        If chFF.Value = True Then
+        If chFF.Value Then
             lData = lData & "0xFF;" ' Perdido
             For i = xCol To xSeccion
                 content.Range(ID, i).Font.ColorIndex = 2
@@ -300,6 +334,16 @@ Private Sub ch1A_Click()
 End Sub
 
 Private Sub ch14_Click()
+    lDataModified = True
+    RedrawLabel
+End Sub
+
+Private Sub ch1C_Click()
+    lDataModified = True
+    RedrawLabel
+End Sub
+
+Private Sub ch1E_Click()
     lDataModified = True
     RedrawLabel
 End Sub
@@ -398,15 +442,16 @@ Private Sub cCancel_Click()
     Else
         ' Verificamos si hay cambios para guardar previos
         Dim result As VbMsgBoxResult
-        If lDataModified And IsOutside = False Then
-            If MsgBox("Al parecer se efectuaron algunos cambios realizados." & vbNewLine & "¿Deseas guardarlos?", vbQuestion + vbYesNo + vbDefaultButton1, "Cotejo de inventario") = vbYes Then
-                SaveExcelData (lPosition)
-            End If
-        End If
+        'If lDataModified And IsOutside = False Then
+            'If MsgBox("Al parecer se efectuaron algunos cambios realizados." & vbNewLine & "¿Deseas guardarlos?", vbQuestion + vbYesNo + vbDefaultButton1, "Cotejo de inventario") = vbYes Then
+                'SaveExcelData (lPosition)
+            'End If
+        'End If
         IsOutside = False
         wFicha.Navigate "about:blank"
         cBack.Enabled = False
         cNext.Enabled = False
+        cSelect.Enabled = False
         
         Dim ctl As Control
         fData.Enabled = False
@@ -451,6 +496,13 @@ On Error GoTo Fail
     LoadWebData tID.text
     
     lPosition = FindExcelData(tID.text, xFolio)
+    If Len(CompareItems) = 0 Then
+        CompareItems = tID.text
+    Else
+        CompareItems = CompareItems & ";" & tID.text
+    End If
+    tID.AddItem tID.text
+    
     If lPosition = 0 Then _
         GoTo RenderOutside
         
@@ -496,6 +548,11 @@ RenderOutside:
     
 End Sub
 
+Private Sub cSelect_Click()
+    Sheets(tSheet).Activate
+    Sheets(tSheet).Range("$D$" & lPosition).Select
+End Sub
+
 Private Sub cSugest_Click()
     tNotas.SetFocus
     
@@ -523,14 +580,26 @@ Private Sub cSugest_Click()
     ' Base URL
     ' https://docs.google.com/forms/d/e/1FAIpQLSeMC0Ox2AVFiQ9RKPmIvTZRV9nf_ZcqXUtrOoKxj9vNrifxgg/viewform?
     
-    Dim url As String
-    url = "https://docs.google.com/forms/d/e/1FAIpQLSeMC0Ox2AVFiQ9RKPmIvTZRV9nf_ZcqXUtrOoKxj9vNrifxgg/viewform?"
+    Dim baseURL As String
+    baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSe11o_DMn2XyqSEYlNoNxC1h5HXjoH2hmCLE-8omLI9y-GSyw/viewform?"
+    
+    Dim entryUser, entrySala, entryNFicha, entryISBN, entryPais, entryDonante, entryDate As String
+    entryUser = "&entry.1531173234="    ' Bibliotecario
+    entrySala = "&entry.1295936122="    ' Sala a cargo
+    entryNFicha = "&entry.1077648177="  ' Número de ficha
+    entryISBN = "&entry.215912048="     ' ISBN
+    entryPais = "&entry.798850835="     ' Lugar de edición
+    entryDonante = "&entry.1968072427=" ' Donante
+    'entryDate = "&entry.1250767358_"   ' Fecha
+    
     If lUser = "" Then _
         lUser = InputBox("Por favor escribe tu nombre, se usará para rellenar los datos de Google Forms", "Cotejo / Verificación")
        
     If lUser = "" Then Exit Sub
+    baseURL = baseURL & entryUser & lUser & entrySala & GetParam("Name") & entryNFicha & nFicha & _
+        entryISBN & nISBN & entryPais & Trim(tPais.text) & entryDonante & "Donación : " & Trim(tDonante.text)
     
-    url = url & "entry.1531173234=" & lUser & "&entry.1295936122=" & GetParam("Name") & _
+    'baseURL = baseURL & "entry.1531173234=" & lUser & "&entry.1295936122=" & GetParam("Name") & _
         "&entry.1077648177=" & nFicha & "&entry.215912048=" & nISBN & "&entry.798850835=" & _
         Trim(tPais.text) & "&entry.1968072427=Donación : " & Trim(tDonante.text) & _
         "&entry.1250767358_day=" & Day(Now) & "&entry.1250767358_month=" & Month(Now) & _
@@ -538,46 +607,46 @@ Private Sub cSugest_Click()
     
     ' Execute URL with prefilled data
     
-    ThisWorkbook.FollowHyperlink (url)
+    ThisWorkbook.FollowHyperlink (baseURL)
 End Sub
 
-Private Sub tAño_Change()
+Private Sub tAño_AfterUpdate()
     lDataModified = True
 End Sub
 
-Private Sub tAutor_Change()
+Private Sub tAutor_AfterUpdate()
     lDataModified = True
 End Sub
 
-Private Sub tClasificacion_Change()
+Private Sub tClasificacion_AfterUpdate()
     lDataModified = True
 End Sub
 
-Private Sub tDonante_Change()
+Private Sub tDonante_AfterUpdate()
     lDataModified = True
 End Sub
 
-Private Sub tEditorial_Change()
+Private Sub tEditorial_AfterUpdate()
     lDataModified = True
 End Sub
 
-Private Sub tFolio_Change()
+Private Sub tFolio_AfterUpdate()
     lDataModified = True
 End Sub
 
-Private Sub tIdioma_Change()
+Private Sub tIdioma_AfterUpdate()
     lDataModified = True
 End Sub
 
-Private Sub tNotas_Change()
+Private Sub tNotas_AfterUpdate()
     lDataModified = True
 End Sub
 
-Private Sub tPais_Change()
+Private Sub tPais_AfterUpdate()
     lDataModified = True
 End Sub
 
-Private Sub tTitulo_Change()
+Private Sub tTitulo_AfterUpdate()
     lDataModified = True
 End Sub
 
@@ -615,7 +684,7 @@ Private Sub UserForm_Initialize()
     End If
     
     xTitulo = GetPos("Título")
-    xAutor = GetPos("Autor")
+    XAutor = GetPos("Autor")
     xPais = GetPos("Lugar de Edición")
     xEditorial = GetPos("Editorial")
     xAño = GetPos("Año de edición")
@@ -657,6 +726,8 @@ Private Sub UserForm_Initialize()
         ch10.Tag = "_unabled"
         ch12.Tag = "_unabled"
         ch14.Tag = "_unabled"
+        ch1C.Tag = "_unabled"
+        ch1E.Tag = "_unabled"
         chFF.Tag = "_unabled"
     End If
     
@@ -669,6 +740,15 @@ Private Sub UserForm_Initialize()
     For Each lData In obDonante.Keys
         tDonante.AddItem lData
     Next lData
+    
+    Dim lSearchedItems() As String
+    If Len(CompareItems) > 0 Then
+        lSearchedItems = Split(CompareItems, ";")
+        Dim i As Long
+        For i = LBound(lSearchedItems) To UBound(lSearchedItems)
+            tID.AddItem lSearchedItems(i)
+        Next i
+    End If
 
     Me.Caption = "Cotejo y verificación -- " & tSheet & " (" & ThisWorkbook.Sheets(tSheet).ListObjects(tTable).Range.Rows.Count & " libros registrados)"
     

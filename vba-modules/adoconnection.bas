@@ -50,6 +50,24 @@ Public Type tabID
     Valid As Boolean
 End Type
 
+' Convierte del formato 1-23 a 2023-1
+Public Function InverseID(ByVal ID As String) As String
+    Dim lData() As String, buff As String
+    lData = Split(Trim(ID), "-")
+    If UBound(lData) > 0 Then
+        If Left(lData(1), 1) = "9" Then
+            lData(1) = "19" & lData(1)
+        Else
+            lData(1) = "20" & lData(1)
+        End If
+        buff = lData(1) & "-" & lData(0)
+    Else
+        buff = ID
+    End If
+    
+    InverseID = buff
+End Function
+
 ' Devuelve un HTML de una ficha determinada, cargándola además en un objeto WebBrowser
 Public Function GetBookData(ByVal container As WebBrowser, ID As String) As tabID
     Dim result As tabID
@@ -57,12 +75,9 @@ Public Function GetBookData(ByVal container As WebBrowser, ID As String) As tabI
     result = FindData(ID)
     If result.IsRepeated Then _
         MsgBox "Advertencia: Posiblemente el folio del libro está siendo utilizado en uno o más libros diferentes. Por favor revisa que sea correcto", vbExclamation, "Cotejo"
-    result.HTMLContent = returnAsHTML(result)
     
     container.Navigate "about:blank"
-    Do While container.Busy Or container.ReadyState <> 4
-        DoEvents
-    Loop
+    DoEvents
     
     container.Document.Write result.HTMLContent
     GetBookData = result
@@ -71,15 +86,13 @@ End Function
 ' Carga únicamente una ficha determinada en un WebBrowser
 Public Function LoadBookData(ByVal container As WebBrowser, ID As String) As dataInfo
     container.Navigate "about:blank"
-    Do While container.Busy Or container.ReadyState <> 4
-        DoEvents
-    Loop
+    DoEvents
     
     Dim result As tabID
     result = FindData(ID)
     If result.IsRepeated Then _
         MsgBox "Advertencia: Posiblemente el folio del libro está siendo utilizado en uno o más libros diferentes. Por favor revisa que sea correcto", vbExclamation, "Cotejo"
-    container.Document.Write returnAsHTML(result)
+    container.Document.Write result.HTMLContent
     LoadBookData = result.DateInfo
 End Function
 
@@ -362,6 +375,8 @@ Public Function FindData(ID As String) As tabID
     End If
     lData.ID = idData
     lData.Valid = True
+    
+    lData.HTMLContent = returnAsHTML(lData)
     
     FindData = lData
 End Function
