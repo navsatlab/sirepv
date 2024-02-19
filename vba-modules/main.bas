@@ -9,8 +9,8 @@ Attribute VB_Name = "main"
 Option Explicit
 
 Global lUser As String
-Global Const SysVersion As String = "SIREP version 0.92 pre-release | NAVSATLAB - AV" & vbNewLine & "®2024 All rights reserved"
-Global Const LockPC As String = "USUARIO-MXL2503"
+Global Const SysVersion As String = "SIREP version 0.92 pre-release | NAVSATLAB - AV" & vbNewLine & "®2024 All rights reserved | Alex Vásquez"
+Global Const LockPC As String = ""
 
 Public CompareItems As String
 
@@ -83,6 +83,9 @@ Private Function Init() As Boolean
 
     Dim strPC As String
     strPC = Environ("COMPUTERNAME")
+    Init = True
+    
+    Exit Function
     If strPC = LockPC Then
         Init = True
     Else
